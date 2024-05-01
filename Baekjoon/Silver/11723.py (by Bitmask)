@@ -1,0 +1,37 @@
+import sys
+input = sys.stdin.readline
+
+
+M = int(input())
+s = 0b000000000000000000000
+
+for i in range(M):
+    got = input()
+    try:
+        command, att = got.split(' ')
+        att = int(att)
+    except:
+        command = got.strip()
+
+    if command == 'add':
+        s |= (1 << att)
+
+    elif command == 'remove':
+        s &= ~(1<<att)
+        
+    elif command == 'check':
+        if s & (1<<att):
+            print(1)
+
+        else:
+            print(0)
+
+
+    elif command == 'toggle':
+        s ^= (1<<att)
+        
+    elif command == 'all':
+        s = 0b111111111111111111110
+
+    elif command == 'empty':
+        s = 0b000000000000000000000
