@@ -1,0 +1,28 @@
+import sys
+input = sys.stdin.readline
+
+N, M = map(int, input().split(' '))
+
+pedia = enumerate()
+for i in range(N):
+    pedia.append(input())
+
+by_num = list(pedia)
+by_name = sorted(by_num, key = lambda bynum : bynum[1])
+
+for i in range(M):
+    get = input()
+
+    try:
+        get = int(get)
+        tp_num = True
+    except:
+        tp_num = False
+    
+    if tp_num:
+        print(by_num[get][1])
+    else:
+    
+        while True:
+            if get != pedia[len()]:
+                pass#############################not done yet
