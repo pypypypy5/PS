@@ -1,0 +1,32 @@
+import sys
+input = sys.stdin.readline
+
+len_seq, mini = map(int, input().split(' '))
+seq = list(map(int, input().split(' ')))
+
+start = 0
+end = 0
+p_sum = seq[start]
+len_min = len(seq)+1
+
+while end < len(seq):
+
+    if p_sum < mini:
+        end += 1
+        if end < len(seq):
+            p_sum += seq[end]
+
+    else:
+        now_len = end-start+1
+        
+        if now_len<len_min:
+            len_min = now_len
+
+        p_sum -= seq[start]
+        start += 1
+
+if len_min <= len(seq):
+    print(len_min)
+else:
+    print(0)
+        
