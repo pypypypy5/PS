@@ -1,2 +1,2 @@
-# Baekjoon
-My Baekjoon solutions
+# PS
+My PS solutions
